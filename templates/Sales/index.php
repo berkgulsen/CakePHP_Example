@@ -20,7 +20,7 @@
             <td><?= h($row->modified) ?></td>
             <td>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $row->id]) ?>
-                <?= $this->Form->postLink(__('Sil'), ['action' => 'delete', $row->id], ['confirm' => __('Are you sure you want to delete this sale?'), 'class' => 'delete-link']) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $row->id], ['confirm' => __('Are you sure you want to delete this sale?'), 'class' => 'delete-link']) ?>
             </td>
         </tr>
     <?php endforeach; ?>

@@ -4,5 +4,5 @@
 <?= $this->Form->control('revenue') ?>
 <?= $this->Form->control('units_sold') ?>
 <?= $this->Form->control('user_id', ['options' => $users]) ?>
-<?= $this->Form->button(__('Güncelle')) ?>
+<?= $this->Form->button(__('Save')) ?>
 <?= $this->Form->end() ?>
