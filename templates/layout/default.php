@@ -41,12 +41,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
         </div>
         <div class="top-nav-links">
-            <a target="_blank" rel="noopener" >
-                <?php if (isset($this->request->getAttribute('identity')->email)) :
-                    echo $this->request->getAttribute('identity')->email;
-                endif;?></a>
+            <a href="<?= $this->Url->build('/users/add') ?>">Add User</a>
             <?php if ($this->request->getAttribute('identity') !== null) : ?>
-            <a href="<?= $this->Url->build('/users/logout') ?>">Logout</a>
+                <a target="_blank" rel="noopener" ><?php echo $this->request->getAttribute('identity')->email; ?></a>
+                <a href="<?= $this->Url->build('/users/logout') ?>">Logout</a>
+            <?php else : ?>
+                <a href="<?= $this->Url->build('/users/login') ?>">Login</a>
             <?php endif; ?>
         </div>
     </nav>
