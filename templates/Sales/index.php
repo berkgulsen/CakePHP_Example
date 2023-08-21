@@ -19,8 +19,10 @@
             <td><?= h($row->created) ?></td>
             <td><?= h($row->modified) ?></td>
             <td>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $row->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $row->id], ['confirm' => __('Are you sure you want to delete this sale?'), 'class' => 'delete-link']) ?>
+                <?php if ($this->request->getAttribute('identity')->id == $row->user_id || $this->request->getAttribute('identity')->role == 1): ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $row->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $row->id], ['confirm' => __('Are you sure you want to delete this sale?'), 'class' => 'delete-link']) ?>
+                <?php endif; ?>
             </td>
         </tr>
     <?php endforeach; ?>
