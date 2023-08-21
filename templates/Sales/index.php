@@ -10,7 +10,7 @@
         <th>Updated At</th>
         <th>Actions</th>
     </tr>
-    <?php foreach ($sales as $row): ?>
+    <?php foreach ($sales as $row) : ?>
         <tr>
             <td><?= $row->id ?></td>
             <td><?= h($row->revenue) ?></td>
@@ -18,7 +18,10 @@
             <td><?= h($row->user_id) ?></td>
             <td><?= h($row->created) ?></td>
             <td><?= h($row->modified) ?></td>
-            <td><?= $this->Html->link(__('Edit'), ['action' => 'edit', $row->id]) ?></td>
+            <td>
+                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $row->id]) ?>
+                <?= $this->Form->postLink(__('Sil'), ['action' => 'delete', $row->id], ['confirm' => __('Are you sure you want to delete this sale?'), 'class' => 'delete-link']) ?>
+            </td>
         </tr>
     <?php endforeach; ?>
 </table>
