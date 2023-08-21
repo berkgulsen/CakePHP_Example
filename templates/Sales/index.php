@@ -18,6 +18,7 @@
             <td><?= h($row->user_id) ?></td>
             <td><?= h($row->created) ?></td>
             <td><?= h($row->modified) ?></td>
+            <td><?= $this->Html->link(__('Edit'), ['action' => 'edit', $row->id]) ?></td>
         </tr>
     <?php endforeach; ?>
 </table>
