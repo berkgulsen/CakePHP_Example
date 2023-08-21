@@ -42,6 +42,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </div>
         <div class="top-nav-links">
             <a href="<?= $this->Url->build('/users/add') ?>">Add User</a>
+            <a href="<?= $this->Url->build('/leaderboard') ?>">Leaderboard</a>
             <?php if ($this->request->getAttribute('identity') !== null) : ?>
                 <a href="<?= $this->Url->build('/sales') ?>">Sales</a>
                 <a target="_blank" rel="noopener" ><?php echo $this->request->getAttribute('identity')->email; ?></a>

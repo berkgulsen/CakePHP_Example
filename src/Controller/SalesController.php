@@ -107,4 +107,19 @@ class SalesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function leaderboard()
+    {
+        $leaderboard = $this->Sales->find()
+            ->select([
+                'Users.email',
+                'total_revenue' => 'SUM(Sales.revenue)'
+            ])
+            ->innerJoinWith('Users')
+            ->group('Users.email')
+            ->orderDesc('total_revenue');
+
+        $this->set('leaderboard', $leaderboard);
+    }
+
 }
